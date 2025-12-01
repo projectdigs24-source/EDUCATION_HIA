@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Gallery — Hamdan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Poppins',sans-serif;margin:0;background:#e6f0ff;color:#002147}
+header{background:#fff;padding:12px 30px;box-shadow:0 4px 18px rgba(0,0,0,0.06);position:sticky;top:0;z-index:99}
+.logo{height:56px}
+.container{max-width:1100px;margin:26px auto;padding:0 18px}
+h1{margin:0 0 18px}
+.gallery-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.gallery-container img{width:100%;height:200px;object-fit:cover;border-radius:12px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform .25s}
+.gallery-container img:hover{transform:scale(1.03)}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;z-index:9999}
+.lightbox img{max-width:90%;max-height:85%;border-radius:10px}
+.controls{position:absolute;top:50%;transform:translateY(-50%);font-size:40px;color:#fff;cursor:pointer;user-select:none}
+.left{left:30px}.right{right:30px}
+.close{position:absolute;right:30px;top:30px;font-size:34px;color:#fff;cursor:pointer}
+.video-embed{width:100%;height:480px;border-radius:12px;overflow:hidden}
+@media (max-width:720px){.video-embed{height:260px}}
+</style>
+</head>
+<body>
+<header style="display:flex;align-items:center;justify-content:space-between">
+  <img class="logo" src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/K7ARaclCg-ExIVK9xZzKl.png" alt="logo">
+  <nav><a href="index.html" style="color:#003366;text-decoration:none;font-weight:700">Home</a></nav>
+</header>
+
+<div class="container">
+  <h1>Gallery</h1>
+
+  <div class="gallery-container" id="grid">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/GaAchODDFGLi07f-12N4A.jpeg" alt="" onclick="openLB(this.src)">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/L0TlqIL-ZM7ZHsmhQjay-.jpeg" alt="" onclick="openLB(this.src)">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/jdtsU8m-LnjoKj7UIB119.jpeg" alt="" onclick="openLB(this.src)">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/GaAchODDFGLi07f-12N4A.jpeg" alt="" onclick="openLB(this.src)">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/K7ARaclCg-ExIVK9xZzKl.png" alt="" onclick="openLB(this.src)">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/L0TlqIL-ZM7ZHsmhQjay-.jpeg" alt="" onclick="openLB(this.src)">
+  </div>
+
+  <h2 style="margin-top:28px">Video Highlights</h2>
+  <div class="video-embed">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLB()">
+  <span class="close" onclick="closeLB()">×</span>
+  <span class="controls left" onclick="prevImg(event)">‹</span>
+  <img id="lightbox-img" src="">
+  <span class="controls right" onclick="nextImg(event)">›</span>
+</div>
+
+<script>
+let imgs = Array.from(document.querySelectorAll('.gallery-container img'));
+let idx = 0;
+function openLB(src){
+  imgs = Array.from(document.querySelectorAll('.gallery-container img'));
+  idx = imgs.findIndex(i=>i.src===src);
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLB(e){
+  if(e && e.target !== document.getElementById('lightbox')) return;
+  document.getElementById('lightbox').style.display = 'none';
+}
+function nextImg(e){ if(e) e.stopPropagation(); idx = (idx+1)%imgs.length; document.getElementById('lightbox-img').src = imgs[idx].src; }
+function prevImg(e){ if(e) e.stopPropagation(); idx = (idx-1+imgs.length)%imgs.length; document.getElementById('lightbox-img').src = imgs[idx].src; }
+document.addEventListener('keydown', (ev)=>{ if(ev.key==='ArrowRight') nextImg(); if(ev.key==='ArrowLeft') prevImg(); if(ev.key==='Escape') closeLB(); });
+</script>
+</body>
+</html>
