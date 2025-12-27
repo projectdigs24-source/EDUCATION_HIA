@@ -2,143 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Hamdan International Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Specific styles for About Page */
-    .about-intro { padding: 60px 0; background: var(--white); }
-    .vision-mission-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .info-card {
-      padding: 30px;
-      border-radius: 12px;
-      background: var(--bg-light);
-      border-top: 4px solid var(--accent);
-      text-align: center;
-    }
-    .info-card h3 { color: var(--primary); margin-bottom: 15px; }
-
-    .director-section {
-      background: var(--primary);
-      color: white;
-      padding: 80px 0;
-    }
-    .director-flex {
-      display: flex;
-      gap: 50px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .director-img {
-      flex: 1;
-      min-width: 300px;
-      max-width: 400px;
-      border-radius: 20px;
-      border: 8px solid rgba(255,255,255,0.1);
-    }
-    .director-text { flex: 2; min-width: 300px; }
-    .quote { font-style: italic; font-size: 1.2rem; color: var(--accent); margin-bottom: 20px; display: block; }
-    
-    @media (max-width: 768px) {
-      .director-flex { text-align: center; justify-content: center; }
-    }
-  </style>
 </head>
 <body>
 
 <header>
   <div class="container nav-wrapper">
-    <a href="index.html"><img src="hamdan_logo_png.png" alt="Logo" class="logo"></a>
-    <div class="mobile-menu-btn" id="mobile-toggle">☰</div>
-    <ul class="nav-links" id="nav-list">
+    <img src="hamdan_logo_png.png" alt="Hamdan Logo" class="logo">
+    <div class="mobile-btn" onclick="document.getElementById('nav-menu').classList.toggle('active')">☰</div>
+    <ul class="nav-links" id="nav-menu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="curriculum.html">Academics</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="admission_form.html">Admissions</a></li>
       <li><a href="fees.html">Fees</a></li>
-      <li><a href="portal.html" style="background:var(--primary); color:white; padding: 8px 20px; border-radius: 5px;">Portal</a></li>
+      <li><a href="portal.html" class="btn-portal">Portal</a></li>
     </ul>
   </div>
 </header>
 
-<main>
-  <section class="about-intro">
-    <div class="container">
-      <h1 style="color: var(--primary); margin-bottom: 20px;">Our Identity</h1>
-      <p>A private institution with a public purpose, Hamdan International Academy combines talent nurturing from the grassroots with rigorous tertiary education preparation. We are committed to developing self-inspired, disciplined, and lifelong learners.</p>
-      
-      <div class="vision-mission-grid">
-        <div class="info-card">
-          <h3>Our Vision</h3>
-          <p>To be a world-class educational service provider, attaining the greatest height of excellence and high standards of academic discipline.</p>
-        </div>
-        <div class="info-card">
-          <h3>Our Mission</h3>
-          <p>To instill sound knowledge, skills, and values within a serene environment that enables learners to become self-inspired and globally competitive.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<main class="container">
+  <section class="card">
+    <h1 class="section-title">About Hamdan International Academy</h1>
+    <p>A private institution with a public purpose, Hamadan International Academy combines both talent nurturing from the grassroots and rigorous tertiary education preparation with a commitment.</p>
 
-  <section class="director-section">
-    <div class="container">
-      <div class="director-flex">
-        <img src="scool%20image.jpg" alt="Executive Director" class="director-img">
-        <div class="director-text">
-          <span class="quote">"Building a legacy of excellence, one student at a time."</span>
-          <h2>Message from the Director</h2>
-          <p style="margin-bottom: 20px;">
-            At Hamdan International Academy, we believe education is a journey of discovery. Our Foundation years focus on <strong>physical development and motor skills</strong>, while our Secondary section is a powerhouse for <strong>academic rigor and innovation</strong>.
-          </p>
-          <p>
-            We invite you to experience a community where your child is not just a student, but a future leader being prepared for the world stage.
-          </p>
-          <p style="margin-top: 20px; font-weight: 700;">— Executive Director</p>
-        </div>
-      </div>
+    <div style="margin-top: 30px;">
+      <h2 style="color: var(--primary);">Our Vision</h2>
+      <p>Our Vision is to be a world class educational service provider, through relentless effort to attain the greatest height of excellence in education and high standard of discipline pursuit of knowledge.</p>
     </div>
-  </section>
 
-  <section style="padding: 60px 0;">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 40px;">The Academic Journey</h2>
-      
-      <div class="vision-mission-grid">
-        <div style="border-left: 4px solid var(--accent); padding-left: 20px;">
-          <h4>Early Years & Primary</h4>
-          <p>Developing fine/gross motor skills, curiosity, and foundational literacy in a safe, play-based environment.</p>
-        </div>
-        <div style="border-left: 4px solid var(--primary); padding-left: 20px;">
-          <h4>Secondary School</h4>
-          <p>Specialized STEM, Arts, and Vocational tracks focused on tertiary readiness and professional ethics.</p>
-        </div>
-      </div>
+    <div style="margin-top: 30px;">
+      <h2 style="color: var(--primary);">Our Mission</h2>
+      <p>To instill sound knowledge, skills and values into learners within a serene and conducive environment, this enable learners to become self-inspired, self-discipline and life-long learners.</p>
+    </div>
+
+    <div style="margin-top: 30px; background: #eef4f8; padding: 25px; border-radius: 10px;">
+      <h2 style="color: var(--primary);">Academic Focus</h2>
+      <p>Our Secondary School classrooms are for ages. This age group is working on developing their fine and gross motor skills, that are gaining independence.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <p>📞 <a href="tel:+2349030009600" style="color:var(--accent);">+234 903 000 9600</a> | 📧 info@hamdanacademy.edu.ng</p>
-    <p>© 2025 Hamdan International Academy. All Rights Reserved.</p>
+    <p>📍 Opposite BUK Old Site, Kano State, Nigeria</p>
+    <p>📞 <a href="tel:+2349030009600" style="color: var(--accent); text-decoration: none;">+234 903 000 9600</a></p>
+    <p style="margin-top: 10px; font-size: 13px; opacity: 0.7;">© 2025 Hamdan International Academy</p>
   </div>
 </footer>
-
-<script>
-  // Same Mobile JS as Index
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navList = document.getElementById('nav-list');
-  mobileToggle.addEventListener('click', () => {
-    navList.classList.toggle('show');
-    mobileToggle.textContent = navList.classList.contains('show') ? '✕' : '☰';
-  });
-</script>
 
 </body>
 </html>
