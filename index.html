@@ -1,121 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance | Hamdan International Academy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1a472a;
-            --accent: #c5a021;
-            --white: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #333;
-            text-align: center;
-        }
-
-        .maintenance-container {
-            max-width: 600px;
-            padding: 40px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            margin: 20px;
-        }
-
-        .logo {
-            max-width: 180px;
-            margin-bottom: 30px;
-        }
-
-        .icon-box {
-            font-size: 50px;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .status-badge {
-            display: inline-block;
-            background: #fff3cd;
-            color: #856404;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            border-top: 1px solid #eee;
-            padding-top: 25px;
-            font-size: 14px;
-        }
-
-        .contact-info a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Simple animation */
-        .gear {
-            display: inline-block;
-            animation: spin 4s linear infinite;
-        }
-
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hamdan International Academy | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="maintenance-container">
-        <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/K7ARaclCg-ExIVK9xZzKl.png" alt="Hamdan Academy Logo" class="logo">
-        
-        <div class="icon-box">
-            <span class="gear">⚙️</span>
-        </div>
+<header>
+  <div class="container nav-wrapper">
+    <a href="index.html">
+      <img src="hamdan_logo_png.png" alt="Hamdan Logo" class="logo">
+    </a>
+    
+    <div class="mobile-menu-btn" id="mobile-toggle">☰</div>
+    
+    <ul class="nav-links" id="nav-list">
+      <li><a href="index.html">Home</a></li>
+      
+      <li class="dropdown">
+        <a href="#" class="drop-trigger">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="contact.html">Our Identity</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
 
-        <div class="status-badge">Website Update in Progress</div>
+      <li class="dropdown">
+        <a href="#" class="drop-trigger">Academics ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="curriculum.html">Pathways</a></li>
+          <li><a href="news.html">News & Events</a></li>
+        </ul>
+      </li>
 
-        <h1>Refining Your Digital Experience</h1>
-        
-        <p>
-            Hamdan International Academy is currently updating our portal and website to better serve our students and parents. We are installing new features for the 2025/2026 academic session.
-        </p>
+      <li><a href="admission_form.html">Admissions</a></li>
+      <li><a href="fees.html">Fees</a></li>
+      <li><a href="portal.html" style="background:var(--primary); color:white; padding: 8px 20px; border-radius: 5px;">Portal</a></li>
+    </ul>
+  </div>
+</header>
 
-        <div class="contact-info">
-            <p>For urgent admissions or inquiries, please contact us:</p>
-            <p>
-                📞 <strong>+234 903 000 9600</strong><br>
-                📧 <a href="mailto:info@hamdanacademy.com">info@hamdanacademy.edu.ng</a>
-            </p>
-        </div>
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Excellence, Innovation & Leadership</h1>
+      <p>Nurturing grassroots talent for tertiary education success.</p>
+      <a href="admission_form.html" class="btn-cta">Start Application 2025</a>
     </div>
+  </section>
+
+  <section style="padding: 60px 0; text-align: center; background: white;">
+    <div class="container">
+      <h2>Welcome to Hamdan</h2>
+      <p style="max-width: 800px; margin: 20px auto;">
+        A private institution with a public purpose. We combine talent nurturing with rigorous preparation 
+        to ensure our students become self-inspired, disciplined, and lifelong learners.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-contact">
+      <p>📍 Opposite BUK Old Site, Kano State, Nigeria</p>
+      <p>📞 Phone: <a href="tel:+2349030009600">+234 903 000 9600</a></p>
+      <p>📧 Email: <a href="mailto:info@hamdanacademy.edu.ng">info@hamdanacademy.edu.ng</a></p>
+    </div>
+    <hr style="margin: 20px 0; opacity: 0.2;">
+    <p>© 2025 Hamdan International Academy. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu Toggle Logic
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navList = document.getElementById('nav-list');
+  const dropTriggers = document.querySelectorAll('.drop-trigger');
+
+  mobileToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
+    mobileToggle.textContent = navList.classList.contains('show') ? '✕' : '☰';
+  });
+
+  // Mobile Dropdown Logic
+  dropTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault(); // Prevent link from jumping
+        const parent = trigger.parentElement;
+        parent.classList.toggle('open');
+      }
+    });
+  });
+
+  // Close menu if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navList.contains(e.target) && !mobileToggle.contains(e.target)) {
+      navList.classList.remove('show');
+      mobileToggle.textContent = '☰';
+    }
+  });
+</script>
 
 </body>
 </html>
