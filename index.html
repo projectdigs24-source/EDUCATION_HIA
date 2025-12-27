@@ -2,43 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hamdan International Academy | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamdan International Academy</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
   <div class="container nav-wrapper">
-    <a href="index.html">
-      <img src="hamdan_logo_png.png" alt="Hamdan Logo" class="logo">
-    </a>
+    <img src="hamdan_logo_png.png" alt="Hamdan Logo" class="logo">
     
-    <div class="mobile-menu-btn" id="mobile-toggle">☰</div>
+    <div class="mobile-btn" id="mobile-btn">☰</div>
     
-    <ul class="nav-links" id="nav-list">
+    <ul class="nav-links" id="nav-menu">
       <li><a href="index.html">Home</a></li>
-      
-      <li class="dropdown">
-        <a href="#" class="drop-trigger">About ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="contact.html">Our Identity</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#" class="drop-trigger">Academics ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="curriculum.html">Pathways</a></li>
-          <li><a href="news.html">News & Events</a></li>
-        </ul>
-      </li>
-
+      <li><a href="about.html">About Us</a></li>
       <li><a href="admission_form.html">Admissions</a></li>
       <li><a href="fees.html">Fees</a></li>
-      <li><a href="portal.html" style="background:var(--primary); color:white; padding: 8px 20px; border-radius: 5px;">Portal</a></li>
+      <li><a href="portal.html" class="btn-portal">Portal Login</a></li>
     </ul>
   </div>
 </header>
@@ -52,12 +34,11 @@
     </div>
   </section>
 
-  <section style="padding: 60px 0; text-align: center; background: white;">
+  <section style="padding: 80px 0; text-align: center;">
     <div class="container">
-      <h2>Welcome to Hamdan</h2>
-      <p style="max-width: 800px; margin: 20px auto;">
-        A private institution with a public purpose. We combine talent nurturing with rigorous preparation 
-        to ensure our students become self-inspired, disciplined, and lifelong learners.
+      <h2 style="color: var(--primary);">Welcome to Hamdan</h2>
+      <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem;">
+        A private institution with a public purpose. We combine talent nurturing with rigorous preparation to ensure our students become self-inspired, disciplined, and lifelong learners.
       </p>
     </div>
   </section>
@@ -65,44 +46,21 @@
 
 <footer>
   <div class="container">
-    <div class="footer-contact">
-      <p>📍 Opposite BUK Old Site, Kano State, Nigeria</p>
-      <p>📞 Phone: <a href="tel:+2349030009600">+234 903 000 9600</a></p>
-      <p>📧 Email: <a href="mailto:info@hamdanacademy.edu.ng">info@hamdanacademy.edu.ng</a></p>
-    </div>
-    <hr style="margin: 20px 0; opacity: 0.2;">
-    <p>© 2025 Hamdan International Academy. All Rights Reserved.</p>
+    <p>📍 Opposite BUK Old Site, Kano State, Nigeria</p>
+    <p>📞 Phone: <a href="tel:+2349030009600">+234 903 000 9600</a></p>
+    <p>📧 Email: <a href="mailto:info@hamdanacademy.edu.ng">info@hamdanacademy.edu.ng</a></p>
+    <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">© 2025 Hamdan International Academy. All Rights Reserved.</p>
   </div>
 </footer>
 
 <script>
-  // Mobile Menu Toggle Logic
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navList = document.getElementById('nav-list');
-  const dropTriggers = document.querySelectorAll('.drop-trigger');
+  // Script to fix the "Mess" on mobile
+  const mobileBtn = document.getElementById('mobile-btn');
+  const navMenu = document.getElementById('nav-menu');
 
-  mobileToggle.addEventListener('click', () => {
-    navList.classList.toggle('show');
-    mobileToggle.textContent = navList.classList.contains('show') ? '✕' : '☰';
-  });
-
-  // Mobile Dropdown Logic
-  dropTriggers.forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault(); // Prevent link from jumping
-        const parent = trigger.parentElement;
-        parent.classList.toggle('open');
-      }
-    });
-  });
-
-  // Close menu if clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navList.contains(e.target) && !mobileToggle.contains(e.target)) {
-      navList.classList.remove('show');
-      mobileToggle.textContent = '☰';
-    }
+  mobileBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    mobileBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
   });
 </script>
 
