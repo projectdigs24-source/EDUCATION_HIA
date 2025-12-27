@@ -1,105 +1,65 @@
-/* HAMDAN INTERNATIONAL ACADEMY - MASTER STYLES 2025 */
+/* HAMDAN MASTER STYLES - NAVY & GOLD */
 :root {
-  --primary: #003366; /* Navy Blue */
-  --accent: #FFCC00;  /* Academic Gold */
+  --primary: #003366; 
+  --accent: #FFCC00;
   --white: #ffffff;
   --bg: #f4f7f6;
-  --text: #333333;
+  --text: #333;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-  background-color: var(--bg);
+body { 
+  font-family: 'Poppins', sans-serif; 
+  background-color: var(--bg); 
+  color: var(--text); 
+  line-height: 1.6; 
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* NAVIGATION */
-header {
-  background: var(--white);
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* HEADER & MOBILE NAV */
+header { 
+  background: var(--white); 
+  padding: 15px 0; 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
 }
 
-.nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
 
-.logo { height: 60px; width: auto; }
+.logo { height: 50px; }
 
 .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 15px;
-}
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 15px; }
 
-.btn-portal {
-  background: var(--primary);
-  color: white !important;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
+.btn-portal { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 5px; }
 
-/* MOBILE MENU */
-.mobile-btn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: var(--primary);
-}
+.mobile-btn { display: none; font-size: 28px; cursor: pointer; color: var(--primary); }
 
 @media (max-width: 992px) {
   .mobile-btn { display: block; }
-  .nav-links {
-    position: fixed; top: 80px; left: -100%; width: 100%; height: 100vh;
-    background: white; flex-direction: column; padding: 40px; transition: 0.4s;
+  .nav-links { 
+    position: fixed; top: 80px; left: -100%; width: 100%; height: 100vh; 
+    background: white; flex-direction: column; padding: 40px; transition: 0.4s; 
   }
   .nav-links.active { left: 0; }
 }
 
-/* CARDS & FORMS */
-.content-card {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  margin: 40px 0;
+/* HERO SECTION */
+.hero { 
+  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('scool%20image.jpg') center/cover; 
+  padding: 100px 0; color: white; text-align: center; 
 }
 
-.section-title { color: var(--primary); margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
-
-.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-
-.form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
-
-.form-group label { font-weight: 600; margin-bottom: 5px; font-size: 14px; }
-
-.form-group input, .form-group select, .form-group textarea {
-  padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+.btn-cta { 
+  background: var(--accent); color: var(--primary); padding: 15px 35px; 
+  text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; margin-top: 20px; 
 }
 
-.submit-btn {
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 20px;
-}
-
-footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+/* FOOTER */
+footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; margin-top: 40px; }
+footer a { color: var(--accent); text-decoration: none; }
