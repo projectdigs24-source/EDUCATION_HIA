@@ -3,139 +3,218 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Apply — Hamdan International Academy</title>
+<title>Admission Form — Hamdan International Academy</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   font-family:'Poppins',sans-serif;
-  background:#e6f0ff;
+  background:#f2f6fc;
   margin:0;
   color:#002147;
 }
 .container{
-  max-width:780px;
+  max-width:760px;
   margin:40px auto;
-  padding:30px;
+  padding:34px;
   background:#fff;
   border-radius:14px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  box-shadow:0 4px 20px rgba(0,0,0,0.06);
 }
 h2{
   margin-top:0;
-  color:#002147;
   font-weight:700;
+  color:#002147;
+  font-size:26px;
+}
+section-title{
+  font-weight:600;
+  color:#003366;
 }
 input,textarea,select{
   width:100%;
   padding:12px;
   border-radius:8px;
-  border:1px solid #dcdcdc;
+  border:1px solid #d9d9d9;
   margin-top:10px;
   font-size:15px;
-  background:#fdfdfd;
+  background:#fafafa;
+}
+input:focus,textarea:focus,select:focus{
+  border-color:#003366;
+  outline:none;
 }
 .button{
   background:#003366;
   color:#fff;
-  padding:12px 20px;
+  padding:14px 22px;
   border-radius:10px;
   border:none;
   font-weight:700;
   cursor:pointer;
+  font-size:16px;
+  margin-top:20px;
 }
-.price-tag{
-  background:#00336610;
-  padding:10px;
-  border-radius:8px;
-  font-weight:600;
-  border-left:4px solid #003366;
-  margin-top:10px;
+.payment-btn{
+  background:#ffb400;
+  color:#002147;
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+  font-size:16px;
+}
+.terms-box{
+  background:#fafafa;
+  padding:16px;
+  border-radius:10px;
+  border:1px solid #e6e6e6;
+  margin-top:20px;
+  line-height:1.5;
+  font-size:14px;
 }
 .small{
   font-size:13px;
   color:#555;
-  margin-top:8px;
-}
-.terms-box{
-  margin-top:15px;
-  padding:12px;
-  background:#f8f8f8;
-  border-radius:8px;
-  font-size:13px;
-  border:1px solid #e1e1e1;
+  margin-top:10px;
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
-  <h2>Admission Application Form</h2>
 
-  <div class="price-tag">
-    <strong>Application Fee:</strong> ₦30,000 (for Nursery School, Primary School & College)
-  </div>
+<h2>Admission Form</h2>
 
-  <form id="admissionForm" 
-        action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" 
-        method="POST" 
-        enctype="multipart/form-data">
+<form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" enctype="multipart/form-data">
 
-    <label>Full Name
-      <input name="fullname" required>
-    </label>
+<!-- STUDENT INFO -->
+<h3 class="section-title">Student Information</h3>
 
-    <label>Email Address
-      <input type="email" name="email" required>
-    </label>
+<label>Child’s Full Name
+  <input name="child_name" required>
+</label>
 
-    <label>Phone Number
-      <input type="tel" name="phone" required>
-    </label>
+<label>Date of Birth
+  <input type="date" name="dob" required>
+</label>
 
-    <label>Class Applying For
-      <select name="class" required>
-        <option value="">Select a class</option>
-        <option>Nursery School</option>
-        <option>Primary School</option>
-        <option>College</option>
-      </select>
-    </label>
+<label>Religion
+  <input name="religion">
+</label>
 
-    <label>Upload Entry Documents (Birth cert, results, passport photo)
-      <input type="file" name="documents" accept=".pdf,.jpg,.jpeg,.png" required>
-    </label>
+<label>Home Address
+  <textarea name="address" rows="2"></textarea>
+</label>
 
-    <label>Why do you want to join HIA?
-      <textarea name="message" rows="4"></textarea>
-    </label>
+<label>Nationality
+  <input name="nationality">
+</label>
 
-    <div class="terms-box">
-      <label>
-        <input type="checkbox" name="terms" required>  
-        I agree to the <strong>Terms & Conditions</strong>:
-      </label>
-      <ul style="margin:10px 0 0 20px; padding:0; line-height:1.4;">
-        <li>Application fee is <strong>non-refundable</strong> under all circumstances.</li>
-        <li>Submitting this form does not guarantee admission.</li>
-        <li>All documents provided must be valid and verifiable.</li>
-        <li>False information may result in disqualification.</li>
-        <li>Your data will be used only for admission processing.</li>
-      </ul>
-    </div>
+<label>State of Origin
+  <input name="state_origin">
+</label>
 
-    <div style="display:flex;gap:12px;align-items:center;margin-top:20px">
-      <button class="button" type="submit">Submit Application</button>
+<label>Previous School Attended
+  <input name="previous_school">
+</label>
 
-      <a href="checkout.html" 
-         style="background:#ffb400;color:#002147;padding:12px 16px;
-         border-radius:10px;text-decoration:none;font-weight:700">
-         Proceed to Checkout
-      </a>
-    </div>
+<label>Any Ailment or Allergies?
+  <select name="health_issue">
+    <option value="">Select</option>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+</label>
 
-    <p class="small">After submitting, you will receive a confirmation email (via Formspree). Replace the endpoint to adjust behavior.</p>
-  </form>
+<label>Does your child take medication?
+  <select name="medication">
+    <option value="">Select</option>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+</label>
+
+<label>Blood Group
+  <input name="blood_group">
+</label>
+
+<label>Genotype
+  <input name="genotype">
+</label>
+
+
+<!-- PARENT SECTION -->
+<h3 class="section-title" style="margin-top:25px;">Parent / Guardian Information</h3>
+
+<label>Father's Name
+  <input name="father_name">
+</label>
+
+<label>Father's Phone Number
+  <input name="father_phone">
+</label>
+
+<label>Mother's Name
+  <input name="mother_name">
+</label>
+
+<label>Mother's Phone Number
+  <input name="mother_phone">
+</label>
+
+<label>Emergency Contact Number
+  <input name="emergency_contact" required>
+</label>
+
+
+<!-- APPLYING CLASS -->
+<h3 class="section-title" style="margin-top:25px;">Class Applying For</h3>
+
+<label>
+  <select name="class_applying" required>
+    <option value="">Select a class</option>
+    <option>Early Years School</option>
+    <option>Basic School</option>
+    <option>College</option>
+  </select>
+</label>
+
+
+<!-- FILE UPLOAD -->
+<h3 class="section-title" style="margin-top:25px;">Upload Required Documents</h3>
+
+<label>Upload Birth Certificate, Passport Photo or Result
+  <input type="file" name="document_upload" accept=".pdf,.jpg,.jpeg,.png" required>
+</label>
+
+
+<!-- TERMS -->
+<div class="terms-box">
+  <label>
+    <input type="checkbox" name="terms" required>
+    I agree that:
+  </label>
+  <ul style="margin:10px 0 0 20px; padding:0; line-height:1.5;">
+    <li>The application fee is <strong>non-refundable</strong>.</li>
+    <li>Submitting this form does not guarantee admission.</li>
+    <li>All information provided is true and correct.</li>
+    <li>School rules and policies must be followed.</li>
+  </ul>
 </div>
+
+
+<!-- SUBMIT + PROCEED -->
+<button type="submit" class="button">Submit Admission Form</button>
+
+<p class="small">After submitting, proceed to payment.</p>
+
+<a href="checkout.html" class="payment-btn">Proceed to Checkout — ₦30,000</a>
+
+</form>
+</div>
+
 </body>
 </html>
