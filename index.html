@@ -1,191 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hamdan International Academy - Excellence in Learning, Innovation, and Leadership in Kano.">
-  <title>Hamdan International Academy | Excellence in Education</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance | Hamdan International Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a472a;
+            --accent: #c5a021;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            text-align: center;
+        }
+
+        .maintenance-container {
+            max-width: 600px;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+
+        .logo {
+            max-width: 180px;
+            margin-bottom: 30px;
+        }
+
+        .icon-box {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            border-top: 1px solid #eee;
+            padding-top: 25px;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Simple animation */
+        .gear {
+            display: inline-block;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
 
-<header class="main-header">
-  <div class="header-container">
-    <a href="index.html" class="logo-link">
-      <img class="logo" src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/K7ARaclCg-ExIVK9xZzKl.png" alt="Hamdan Academy Logo">
-    </a>
-    
-    <button class="mobile-menu-btn" aria-label="Toggle Navigation">☰</button>
-    
-    <nav class="nav-container">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <a href="#home">Home <span class="arrow">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#news">News & Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#academics">Academics <span class="arrow">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#curriculum">Curriculum</a></li>
-            <li><a href="#departments">Departments</a></li>
-            <li><a href="#programs">Programs</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="checkout.html">Admissions <span class="arrow">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="checkout.html">Apply Online</a></li>
-            <li><a href="#requirements">Entry Requirements</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#fees">Fees <span class="arrow">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="fees.html">Fees Structure</a></li>
-            <li><a href="#scholarships">Scholarships</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#portal">Portal <span class="arrow">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="portal.html">Student Portal</a></li>
-            <li><a href="portal.html">Parent Portal</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">About Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="hero" id="home">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Empowering Future Leaders</h1>
-        <p>Excellence in Learning • Innovation • Leadership</p>
-        <div class="cta-wrapper">
-          <a class="btn-cta" href="checkout.html">Start Application 2025</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="news">
-    <div class="container">
-      <h2 class="section-title">Latest News & Events</h2>
-      <div class="news-grid">
-        <article class="news-card">
-          <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/GaAchODDFGLi07f-12N4A.jpeg" alt="Students competing in Inter-House Sports" loading="lazy">
-          <div class="card-body">
-            <h3>Inter-House Sports 2025</h3>
-            <p>Our annual sports festival was a massive success — celebrating teamwork and athletic excellence.</p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/L0TlqIL-ZM7ZHsmhQjay-.jpeg" alt="STEM Project display" loading="lazy">
-          <div class="card-body">
-            <h3>STEM Innovation Week</h3>
-            <p>Students showcased robotics, coding projects, and advanced science models.</p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/jdtsU8m-LnjoKj7UIB119.jpeg" alt="Food exhibition" loading="lazy">
-          <div class="card-body">
-            <h3>World Food Day</h3>
-            <p>Promoting global food awareness through student exhibitions and presentations.</p>
-          </div>
-        </article>
-      </div>
-      <div class="center-btn">
-        <a href="news.html" class="btn-outline">View All News</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="info-blocks">
-    <div class="container grid-3">
-      <div class="info-card">
-        <h3>About Our Academy</h3>
-        <p>Hamdan International Academy combines talent nurturing with rigorous tertiary preparation. Our vision is to be a world-class provider, instilling knowledge and high disciplinary standards.</p>
-        <a href="contact.html" class="text-link">Learn more →</a>
-      </div>
-      <div class="info-card">
-        <h3>Academic Excellence</h3>
-        <p>A balanced curriculum across STEM, Arts, and Vocational tracks designed to meet international standards.</p>
-        <a href="#academics" class="text-link">Explore programs →</a>
-      </div>
-      <div class="info-card">
-        <h3>Global Admissions</h3>
-        <p>Join a community of scholars. Apply online today and begin your journey toward excellence.</p>
-        <a href="checkout.html" class="text-link">Apply Now →</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-socials">
-      <a href="#" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt=""/></a>
-      <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt=""/></a>
-      <a href="#" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt=""/></a>
-    </div>
-    
-    <div class="footer-map">
-       <div class="map-placeholder">Opp BUK Old Site, Kano, Nigeria</div>
-    </div>
-
-    <div class="footer-info">
-      <p><strong>Hamdan International Academy</strong></p>
-      <p>Email: info@hamdanacademy.edu.ng | Tel: +234 800 123 4567</p>
-      <p class="copyright">© 2025 Hamdan International Academy. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Mobile Menu Logic
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  const dropdowns = document.querySelectorAll('.dropdown');
-
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    menuBtn.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
-  });
-
-  // Handle Mobile Dropdowns
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      if(window.innerWidth <= 768) {
-        // Toggle the 'open' class on the clicked dropdown
-        drop.classList.toggle('open');
+    <div class="maintenance-container">
+        <img src="https://cdn-uploads.huggingface.co/production/uploads/686dd8a37d5400c237628894/K7ARaclCg-ExIVK9xZzKl.png" alt="Hamdan Academy Logo" class="logo">
         
-        // Prevent clicking the parent link from redirecting while on mobile
-        const link = drop.querySelector('a');
-        if (e.target === link) {
-           e.preventDefault();
-        }
-      }
-    });
-  });
+        <div class="icon-box">
+            <span class="gear">⚙️</span>
+        </div>
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-      navLinks.classList.remove('show');
-      menuBtn.textContent = '☰';
-    }
-  });
-</script>
+        <div class="status-badge">Website Update in Progress</div>
+
+        <h1>Refining Your Digital Experience</h1>
+        
+        <p>
+            Hamdan International Academy is currently updating our portal and website to better serve our students and parents. We are installing new features for the 2025 academic session.
+        </p>
+
+        <div class="contact-info">
+            <p>For urgent admissions or inquiries, please contact us:</p>
+            <p>
+                📞 <strong>+234 800 123 4567</strong><br>
+                📧 <a href="mailto:info@hamdanacademy.edu.ng">info@hamdanacademy.edu.ng</a>
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
