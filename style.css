@@ -1,84 +1,259 @@
-/* HAMDAN MASTER STYLES - REFINED 2026 */
+/* HAMDAN INTERNATIONAL ACADEMY 
+   MASTER STYLESHEET - PROFESSIONAL BLUE & GOLD 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --primary: #003366; 
-  --accent: #FFCC00;
+  --primary: #003366;    /* Deep Navy Blue */
+  --accent: #FFCC00;     /* Academic Gold */
   --white: #ffffff;
-  --bg: #f4f7f6;
-  --text: #333;
+  --bg-light: #f8fafc;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body { 
-  font-family: 'Poppins', sans-serif; 
-  background-color: var(--bg); 
-  color: var(--text); 
-  line-height: 1.6; 
+/* 1. RESET & BASE STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* HEADER & NAVIGATION */
-header { 
-  background: var(--white); 
-  padding: 15px 0; 
-  position: sticky; 
-  top: 0; 
-  z-index: 1000; 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+html {
+  scroll-behavior: smooth;
 }
 
-.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-.logo { height: 50px; }
-.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 15px; }
-.btn-portal { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 5px; transition: 0.3s; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  color: var(--text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* MOBILE MENU LOGIC */
-.mobile-btn { display: none; font-size: 28px; cursor: pointer; color: var(--primary); }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 2. NAVIGATION & HEADER */
+header {
+  background: var(--white);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.btn-portal {
+  background: var(--primary);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 51, 102, 0.2);
+}
+
+.btn-portal:hover {
+  background: var(--accent);
+  color: var(--primary) !important;
+}
+
+/* 3. HERO SECTION */
+.hero {
+  background: linear-gradient(rgba(0, 51, 102, 0.82), rgba(0, 51, 102, 0.82)), 
+              url('scool%20image.jpg') center/cover no-repeat;
+  padding: 140px 0;
+  color: white;
+  text-align: center;
+  border-bottom: 6px solid var(--accent);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 35px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.btn-cta {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 16px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  display: inline-block;
+  transition: var(--transition);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. NEWS & EVENTS (DAILY TRUST BOAST) */
+.featured-news {
+  padding: 100px 0;
+  background-color: var(--bg-light);
+}
+
+.news-boast-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.news-image {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.press-logo {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.press-logo span {
+  color: #c00; /* Daily Trust Brand Red */
+  font-weight: 800;
+}
+
+/* 5. COMPONENTS & BADGES */
+.badge {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* 6. FOOTER */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer p {
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+/* 7. MOBILE RESPONSIVENESS */
+.mobile-btn {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--primary);
+}
 
 @media (max-width: 992px) {
-  .mobile-btn { display: block; }
-  .nav-links { 
-    position: fixed; top: 80px; left: -100%; width: 100%; height: 100vh; 
-    background: white; flex-direction: column; padding: 40px; transition: 0.4s; 
+  .mobile-btn {
+    display: block;
   }
-  .nav-links.active { left: 0; }
-}
 
-/* HERO SECTION */
-.hero { 
-  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('scool%20image.jpg') center/cover; 
-  padding: 120px 0; color: white; text-align: center; 
-}
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    padding: 50px;
+    transition: 0.4s ease-in-out;
+  }
 
-.btn-cta { 
-  background: var(--accent); color: var(--primary); padding: 15px 35px; 
-  text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; margin-top: 20px; 
-}
+  .nav-links.active {
+    left: 0;
+  }
 
-/* PRESS BANNER */
-.press-banner { background: #f8f9fa; padding: 25px 0; border-bottom: 1px solid #eee; text-align: center; }
-.press-logo { font-size: 1.1rem; font-weight: 800; color: #666; letter-spacing: 1px; opacity: 0.8; }
-.press-logo span { color: #c00; }
+  .news-boast-card {
+    grid-template-columns: 1fr;
+  }
 
-/* FEATURED NEWS CARD (The Daily Trust Feature) */
-.featured-news { padding: 80px 0; }
-.news-boast-card { 
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; 
-  background: white; border-radius: 20px; overflow: hidden; 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #eee; 
-}
-.news-image { 
-  background: url('https://dailytrust.com/wp-content/uploads/2024/05/Hamdan.jpg') center/cover; 
-  min-height: 400px; 
-}
-.news-content { padding: 50px; }
-.badge { background: var(--accent); color: var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; display: inline-block; }
+  .news-image {
+    min-height: 300px;
+  }
 
-@media (max-width: 768px) {
-  .news-boast-card { grid-template-columns: 1fr; }
-  .news-image { min-height: 250px; }
+  .news-content {
+    padding: 40px 25px;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
-
-footer { background: var(--primary); color: white; padding: 60px 0; text-align: center; }
