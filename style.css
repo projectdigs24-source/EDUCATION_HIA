@@ -1,5 +1,5 @@
 /* HAMDAN INTERNATIONAL ACADEMY 
-   MASTER STYLESHEET - PROFESSIONAL BLUE & GOLD 
+   MASTER STYLESHEET - PROFESSIONAL & MOBILE OPTIMIZED 
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -30,6 +30,7 @@ body {
   background-color: var(--white);
   color: var(--text-main);
   line-height: 1.7;
+  overflow-x: hidden; /* Prevents side-scrolling wobble on mobile */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -60,9 +61,18 @@ header {
   align-items: center;
 }
 
+/* Logo Link Wrapper */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+}
+
 .logo {
   height: 60px;
   width: auto;
+  transition: height 0.3s ease;
 }
 
 .nav-links {
@@ -101,14 +111,14 @@ header {
 .hero {
   background: linear-gradient(rgba(0, 51, 102, 0.82), rgba(0, 51, 102, 0.82)), 
               url('scool%20image.jpg') center/cover no-repeat;
-  padding: 140px 0;
+  padding: 140px 0; /* Default Desktop Padding */
   color: white;
   text-align: center;
   border-bottom: 6px solid var(--accent);
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: 3.5rem; /* Default Desktop Size */
   font-weight: 700;
   letter-spacing: -1px;
   margin-bottom: 20px;
@@ -156,7 +166,9 @@ header {
 }
 
 .news-image {
-  min-height: 400px;
+  /* Using your specific image path */
+  background-image: url('yenter/froor/min-height 4000-jpg');
+  min-height: 400px; /* Default Desktop Height */
   background-size: cover;
   background-position: center;
 }
@@ -212,7 +224,9 @@ footer p {
   margin-bottom: 10px;
 }
 
-/* 7. MOBILE RESPONSIVENESS */
+/* 7. MOBILE RESPONSIVENESS & SIZE FIXES
+   This section handles shrinking everything for phones 
+*/
 .mobile-btn {
   display: none;
   font-size: 30px;
@@ -221,10 +235,9 @@ footer p {
 }
 
 @media (max-width: 992px) {
-  .mobile-btn {
-    display: block;
-  }
-
+  /* Menu Handling */
+  .mobile-btn { display: block; }
+  
   .nav-links {
     position: fixed;
     top: 80px;
@@ -235,25 +248,58 @@ footer p {
     flex-direction: column;
     padding: 50px;
     transition: 0.4s ease-in-out;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
   }
 
-  .nav-links.active {
-    left: 0;
-  }
-
-  .news-boast-card {
-    grid-template-columns: 1fr;
-  }
-
-  .news-image {
-    min-height: 300px;
-  }
-
-  .news-content {
-    padding: 40px 25px;
-  }
+  .nav-links.active { left: 0; }
   
-  .hero h1 {
-    font-size: 2.2rem;
+  /* Initial Shrink for Tablets */
+  .hero { padding: 100px 0; }
+  .hero h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+  /* --- CRITICAL MOBILE SIZE FIXES --- */
+
+  /* 1. Global Spacing Reduction */
+  .hero, .featured-news, section { 
+    padding-top: 50px !important; 
+    padding-bottom: 50px !important; 
+  }
+
+  /* 2. Logo Size */
+  .logo { height: 40px; }
+  header { padding: 10px 0; }
+
+  /* 3. Hero Text Size */
+  .hero h1 { 
+    font-size: 2rem !important; /* drastically reduced */
+    line-height: 1.2;
+    padding: 0 10px;
+  }
+  .hero p { 
+    font-size: 1rem !important; 
+    margin-bottom: 25px;
+  }
+
+  /* 4. News Card Stacking & Image Height */
+  .news-boast-card { 
+    grid-template-columns: 1fr; /* Stack vertically */
+  }
+  .news-image { 
+    min-height: 250px !important; /* Reduced from 400px */
+  }
+  .news-content { 
+    padding: 30px 20px !important; /* Reduce internal padding */
+  }
+  .news-content h3 {
+    font-size: 1.5rem !important;
+  }
+
+  /* 5. Button Sizes */
+  .btn-cta, .btn-portal {
+    padding: 12px 25px !important;
+    font-size: 0.9rem !important;
+    width: auto;
   }
 }
