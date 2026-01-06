@@ -63,3 +63,59 @@ header {
 /* FOOTER */
 footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; margin-top: 40px; }
 footer a { color: var(--accent); text-decoration: none; }
+/* NEW: PRESS & NEWS STYLES */
+.press-banner {
+    background: #f8f9fa;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.press-logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.7;
+}
+.press-logo span { color: #c00; /* Daily Trust Red */ }
+
+.featured-news {
+    padding: 80px 0;
+}
+.news-boast-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    align-items: center;
+}
+.news-image {
+    background: url('https://dailytrust.com/wp-content/uploads/2024/05/Hamdan.jpg') center/cover; /* Placeholder for the article image */
+    height: 100%;
+    min-height: 350px;
+}
+.news-content { padding: 40px; }
+.badge {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .news-boast-card { grid-template-columns: 1fr; }
+    .news-image { height: 250px; }
+}
