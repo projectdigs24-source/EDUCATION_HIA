@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery | Hamdan International Academy</title>
+    <style>
+        :root {
+            --primary: #1a4d2e; /* Update this to your exact school green */
+            --bg: #f9f9f9;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        .gallery-header { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
+        .gallery-header h1 { margin: 0; font-size: 2.5rem; }
+        .gallery-header p { opacity: 0.9; margin-top: 10px; }
+        
+        .gallery-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+        }
+        .gallery-item { 
+            background: white; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover { transform: translateY(-5px); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .caption { padding: 15px; font-size: 0.9rem; color: #555; text-align: center; font-weight: 500; }
+        
+        .back-home { display: inline-block; margin-top: 40px; color: var(--primary); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header class="gallery-header">
+        <h1>Center for Learners Entrepreneurship</h1>
+        <p>Unveiling Ceremony & Fashion Design Lab Highlights</p>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="ribbon-cutting.jpg" alt="Grand Opening Ceremony">
+                <div class="caption">The Official Ribbon Cutting Ceremony</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="fashion-lab.jpg" alt="Our New Fashion Studio">
+                <div class="caption">State-of-the-Art Fashion Design Studio</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="student-working.jpg" alt="Students practicing">
+                <div class="caption">Secondary Students Mastering Pattern Drafting</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="guests.jpg" alt="Dignitaries at the event">
+                <div class="caption">Dignitaries and Parents Touring the Facility</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="machines.jpg" alt="Industrial sewing machines">
+                <div class="caption">Industrial Grade Equipment for Professional Training</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="sketches.jpg" alt="Student design sketches">
+                <div class="caption">The First Fashion Sketches by our Future Designers</div>
+            </div>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-home">← Back to Home News</a>
+        </center>
+    </div>
+
+</body>
+</html>
