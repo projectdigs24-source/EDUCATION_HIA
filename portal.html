@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Portal-specific styling to keep your main CSS clean */
     .portal-body {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       min-height: 100vh;
@@ -33,10 +32,10 @@
     }
     .tab {
       flex: 1;
-      padding: 10px 5px; /* Adjusted for 4 tabs */
+      padding: 10px 5px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 13px; /* Slightly smaller to fit 4 tabs */
+      font-size: 13px;
       color: #777;
       transition: 0.3s;
     }
@@ -60,7 +59,7 @@
       padding: 12px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      box-sizing: border-box; /* Crucial for padding */
+      box-sizing: border-box;
     }
     .btn-login {
       width: 100%;
@@ -100,9 +99,9 @@
     <h2 id="portalTitle">Student Login</h2>
     <p style="color:#666; font-size: 14px; margin-bottom: 25px;">Please enter your credentials to access the portal.</p>
 
-    <form action="#" id="portalForm">
+    <form id="portalForm">
       <div class="form-group">
-        <label for="id" id="idLabel">ID Number / Email</label>
+        <label for="id" id="idLabel">Student ID Number</label>
         <input type="text" id="id" placeholder="HIA/2025/001" required>
       </div>
       <div class="form-group">
@@ -124,15 +123,17 @@
     const portalTitle = document.getElementById('portalTitle');
     const idInput = document.getElementById('id');
     const idLabel = document.getElementById('idLabel');
+    const passInput = document.getElementById('pass');
+    const portalForm = document.getElementById('portalForm');
+
+    let activeTab = 'studentTab';
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs
         tabs.forEach(t => t.classList.remove('active'));
-        // Add to clicked tab
         tab.classList.add('active');
+        activeTab = tab.id;
 
-        // Change content based on ID
         if(tab.id === 'studentTab') {
           portalTitle.innerText = "Student Login";
           idLabel.innerText = "Student ID Number";
@@ -151,9 +152,26 @@
         else if(tab.id === 'adminTab') {
           portalTitle.innerText = "Admin Login";
           idLabel.innerText = "Admin Username";
-          idInput.placeholder = "Enter Admin ID";
+          idInput.placeholder = "admin1";
         }
       });
+    });
+
+    // Form submission logic
+    portalForm.addEventListener('submit', (e) => {
+      if (activeTab === 'adminTab') {
+        e.preventDefault(); // Stop normal form submission
+        
+        const username = idInput.value;
+        const password = passInput.value;
+
+        if (username === 'admin1' && password === 'password1') {
+          window.location.href = "https://namulearndesk.com/";
+        } else {
+          alert("Invalid Admin Credentials. Please try again.");
+        }
+      }
+      // For other tabs, you can add more logic or let them submit naturally
     });
   </script>
 </body>
