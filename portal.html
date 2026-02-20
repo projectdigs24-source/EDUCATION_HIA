@@ -33,9 +33,10 @@
     }
     .tab {
       flex: 1;
-      padding: 10px;
+      padding: 10px 5px; /* Adjusted for 4 tabs */
       cursor: pointer;
       font-weight: 600;
+      font-size: 13px; /* Slightly smaller to fit 4 tabs */
       color: #777;
       transition: 0.3s;
     }
@@ -92,6 +93,8 @@
     <div class="portal-tabs">
       <div class="tab active" id="studentTab">Student</div>
       <div class="tab" id="parentTab">Parent</div>
+      <div class="tab" id="staffTab">Staff</div>
+      <div class="tab" id="adminTab">Admin</div>
     </div>
 
     <h2 id="portalTitle">Student Login</h2>
@@ -99,7 +102,7 @@
 
     <form action="#" id="portalForm">
       <div class="form-group">
-        <label for="id">ID Number / Email</label>
+        <label for="id" id="idLabel">ID Number / Email</label>
         <input type="text" id="id" placeholder="HIA/2025/001" required>
       </div>
       <div class="form-group">
@@ -117,23 +120,40 @@
   </div>
 
   <script>
-    const studentTab = document.getElementById('studentTab');
-    const parentTab = document.getElementById('parentTab');
+    const tabs = document.querySelectorAll('.tab');
     const portalTitle = document.getElementById('portalTitle');
     const idInput = document.getElementById('id');
+    const idLabel = document.getElementById('idLabel');
 
-    studentTab.addEventListener('click', () => {
-      studentTab.classList.add('active');
-      parentTab.classList.remove('active');
-      portalTitle.innerText = "Student Login";
-      idInput.placeholder = "HIA/2025/001";
-    });
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add to clicked tab
+        tab.classList.add('active');
 
-    parentTab.addEventListener('click', () => {
-      parentTab.classList.add('active');
-      studentTab.classList.remove('active');
-      portalTitle.innerText = "Parent Login";
-      idInput.placeholder = "Parent Email Address";
+        // Change content based on ID
+        if(tab.id === 'studentTab') {
+          portalTitle.innerText = "Student Login";
+          idLabel.innerText = "Student ID Number";
+          idInput.placeholder = "HIA/2025/001";
+        } 
+        else if(tab.id === 'parentTab') {
+          portalTitle.innerText = "Parent Login";
+          idLabel.innerText = "Parent Email Address";
+          idInput.placeholder = "example@mail.com";
+        }
+        else if(tab.id === 'staffTab') {
+          portalTitle.innerText = "Staff Login";
+          idLabel.innerText = "Staff ID / Email";
+          idInput.placeholder = "STAFF/2025/01";
+        }
+        else if(tab.id === 'adminTab') {
+          portalTitle.innerText = "Admin Login";
+          idLabel.innerText = "Admin Username";
+          idInput.placeholder = "Enter Admin ID";
+        }
+      });
     });
   </script>
 </body>
