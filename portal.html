@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    :root {
+      --primary: #1a472a;
+    }
     .portal-body {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       min-height: 100vh;
@@ -40,8 +43,8 @@
       transition: 0.3s;
     }
     .tab.active {
-      color: var(--primary, #1a472a);
-      border-bottom: 2px solid var(--primary, #1a472a);
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
       margin-bottom: -2px;
     }
     .form-group {
@@ -63,7 +66,7 @@
     }
     .btn-login {
       width: 100%;
-      background: var(--primary, #1a472a);
+      background: var(--primary);
       color: white;
       border: none;
       padding: 14px;
@@ -102,19 +105,19 @@
     <form id="portalForm">
       <div class="form-group">
         <label for="id" id="idLabel">Student ID Number</label>
-        <input type="text" id="id" placeholder="HIA/2025/001" required>
+        <input type="text" id="id" placeholder="HIA/2026/001" required>
       </div>
       <div class="form-group">
         <label for="pass">Password</label>
         <input type="password" id="pass" placeholder="••••••••" required>
       </div>
       
-      <button type="submit" class="btn-login">Sign In</button>
-      <a href="#" class="forgot-pwd">Forgot your password?</a>
+      <button type="submit" class="btn-login" id="submitBtn">Sign In</button>
+      <a href="https://hamdan.namulearndesk.com/password/reset" class="forgot-pwd" target="_blank">Forgot your password?</a>
     </form>
     
     <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-        <a href="index.html" style="text-decoration:none; color: var(--primary, #1a472a); font-size: 14px; font-weight:600;">← Back to Homepage</a>
+        <a href="index.html" style="text-decoration:none; color: var(--primary); font-size: 14px; font-weight:600;">← Back to Homepage</a>
     </div>
   </div>
 
@@ -123,21 +126,18 @@
     const portalTitle = document.getElementById('portalTitle');
     const idInput = document.getElementById('id');
     const idLabel = document.getElementById('idLabel');
-    const passInput = document.getElementById('pass');
     const portalForm = document.getElementById('portalForm');
-
-    let activeTab = 'studentTab';
+    const submitBtn = document.getElementById('submitBtn');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        activeTab = tab.id;
 
         if(tab.id === 'studentTab') {
           portalTitle.innerText = "Student Login";
           idLabel.innerText = "Student ID Number";
-          idInput.placeholder = "HIA/2025/001";
+          idInput.placeholder = "HIA/2026/001";
         } 
         else if(tab.id === 'parentTab') {
           portalTitle.innerText = "Parent Login";
@@ -147,31 +147,27 @@
         else if(tab.id === 'staffTab') {
           portalTitle.innerText = "Staff Login";
           idLabel.innerText = "Staff ID / Email";
-          idInput.placeholder = "STAFF/2025/01";
+          idInput.placeholder = "STAFF/2026/01";
         }
         else if(tab.id === 'adminTab') {
           portalTitle.innerText = "Admin Login";
           idLabel.innerText = "Admin Username";
-          idInput.placeholder = "admin1";
+          idInput.placeholder = "Enter Admin ID";
         }
       });
     });
 
-    // Form submission logic
+    // Unified redirection logic
     portalForm.addEventListener('submit', (e) => {
-      if (activeTab === 'adminTab') {
-        e.preventDefault(); // Stop normal form submission
-        
-        const username = idInput.value;
-        const password = passInput.value;
+      e.preventDefault();
+      
+      // Update button state for feedback
+      submitBtn.innerText = "Redirecting to Namu Learndesk...";
+      submitBtn.style.opacity = "0.7";
+      submitBtn.disabled = true;
 
-        if (username === 'admin1' && password === 'password1') {
-          window.location.href = "https://namulearndesk.com/";
-        } else {
-          alert("Invalid Admin Credentials. Please try again.");
-        }
-      }
-      // For other tabs, you can add more logic or let them submit naturally
+      // Redirect all roles to your specific Namu URL
+      window.location.href = "https://hamdan.namulearndesk.com/login";
     });
   </script>
 </body>
